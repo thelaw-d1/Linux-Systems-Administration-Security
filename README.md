@@ -69,4 +69,28 @@ Some of the commands I worked with included:
 
 This screenshot shows the rsyslog service after troubleshooting and restarting it to confirm that it was running properly.
 
+## Authentication Log Analysis
 
+I reviewed `/var/log/auth.log` to practice investigating user activity and authentication events. I used `grep` to narrow down the logs and look for sudo activity, authentication failures, and activity involving specific user accounts.
+
+I found failed authentication attempts involving the `analyst1` account and reviewed the timestamps and log details to understand what happened. I also reviewed `su` activity to follow a successful account switch from `thelaw` to `analyst1` and confirm when the session opened and closed.
+
+Some of the commands I worked with included:
+
+- `tail` – reviewed recent authentication log entries
+- `grep sudo /var/log/auth.log` – filtered sudo activity
+- `grep analyst1 /var/log/auth.log` – reviewed activity for a specific user
+- `grep "authentication failure" /var/log/auth.log` – found failed authentication attempts
+- `grep su /var/log/auth.log` – reviewed account switching and session activity
+
+### Authentication Failure Investigation
+
+![Authentication Failure Investigation](09-auth-log-authentication-failures.png)
+
+This screenshot shows failed authentication events involving `analyst1`. I used the timestamps and log details to identify when the failures occurred and which account was involved.
+
+### SU Session Investigation
+
+![SU Session Investigation](10-auth-log-su-session-investigation.png)
+
+I reviewed the `su` activity and found that `thelaw` switched to `analyst1`. The logs showed the session successfully opened at 21:11:08 and closed at 21:24:35. Since the activity matched the account switching I performed during the lab, I treated it as expected activity rather than a security incident.
