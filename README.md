@@ -13,3 +13,14 @@ Instead of only practicing Linux commands, I used the lab to understand what the
 - Primary administrator account: `thelaw`
 - Test user account: `analyst1`
 - Security group: `security`
+
+## User & Group Management
+
+I created a separate user account named `analyst1` to practice managing users in Linux. I also created a `security` group and added users to the group to practice controlling access based on group membership.
+
+Some of the commands I worked with included:
+
+- `useradd` – created a new user account
+- `groupadd` – created the security group
+- `usermod -aG` – added users to the security group
+- `id` – checked user and group membership
