@@ -24,3 +24,9 @@ Some of the commands I worked with included:
 - `groupadd` – created the security group
 - `usermod -aG` – added users to the security group
 - `id` – checked user and group membership
+### User and Group Assignment
+
+![User and group assignment](06-user-group-assignment.png)
+
+This screenshot shows the user and group configuration used in the lab, including the `analyst1` account and `security` group.
+
