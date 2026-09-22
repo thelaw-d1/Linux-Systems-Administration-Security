@@ -43,3 +43,9 @@ Some of the commands I worked with included:
 - `chown` – changed file or directory ownership
 - `setfacl` – configured additional group access
 - `ls -l` – reviewed permissions and ownership
+
+### Security Group Permission Test
+
+![Security Group Permission Test](07-security-group-write-test.png)
+
+This screenshot shows testing file access and group permissions to confirm that members of the `security` group had the expected access.
