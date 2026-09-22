@@ -83,6 +83,7 @@ Some of the commands I worked with included:
 - `grep "authentication failure" /var/log/auth.log` – found failed authentication attempts
 - `grep su /var/log/auth.log` – reviewed account switching and session activity
 
+
 ### Authentication Failure Investigation
 
 ![Authentication Failure Investigation](09-auth-log-authentication-failures.png)
@@ -94,3 +95,11 @@ This screenshot shows failed authentication events involving `analyst1`. I used 
 ![SU Session Investigation](10-auth-log-su-session-investigation.png)
 
 I reviewed the `su` activity and found that `thelaw` switched to `analyst1`. The logs showed the session successfully opened at 21:11:08 and closed at 21:24:35. Since the activity matched the account switching I performed during the lab, I treated it as expected activity rather than a security incident.
+
+## What I Learned
+
+This project helped me become more comfortable working in Linux from the command line instead of only learning the commands individually. I practiced managing users and groups, setting file permissions, working with system services, and troubleshooting when something did not work as expected.
+
+The authentication log portion also gave me more practice reading logs and looking for specific activity instead of just looking at a large amount of log data. I was able to identify failed authentication attempts, follow user activity through timestamps, and determine whether activity was expected based on what was happening in the system.
+
+Overall, this lab helped me better understand how Linux administration and security work together and gave me more hands-on experience that I can continue building on.
