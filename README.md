@@ -30,3 +30,16 @@ Some of the commands I worked with included:
 
 This screenshot shows the user and group configuration used in the lab, including the `analyst1` account and `security` group.
 
+## File Permissions & Access Control
+
+I created a `SecurityReports` directory to practice controlling access to files using Linux permissions and group ownership. I changed the directory and file permissions so members of the `security` group could work with the files while limiting access for other users.
+
+I also tested the permissions to make sure they worked as expected and used the setgid permission so new files created in the directory would inherit the `security` group.
+
+Some of the commands I worked with included:
+
+- `chmod` – changed file and directory permissions
+- `chgrp` – changed group ownership
+- `chown` – changed file or directory ownership
+- `setfacl` – configured additional group access
+- `ls -l` – reviewed permissions and ownership
