@@ -49,3 +49,24 @@ Some of the commands I worked with included:
 ![Security Group Permission Test](07-security-group-write-test.png)
 
 This screenshot shows testing file access and group permissions to confirm that members of the `security` group had the expected access.
+
+## System Services & Troubleshooting
+
+I worked with Linux system services to practice checking whether services were running and troubleshooting them when needed. I used `systemctl` to review the status of services and worked specifically with the `rsyslog` service, which handles system logging.
+
+While working with `rsyslog`, I made a configuration change and learned that systemd needed to reload its configuration before the service could be restarted properly. I used `systemctl daemon-reload`, restarted `rsyslog`, and checked the service again to make sure it was running.
+
+Some of the commands I worked with included:
+
+- `systemctl` – viewed and managed system services
+- `systemctl status rsyslog` – checked the status of the rsyslog service
+- `systemctl daemon-reload` – reloaded systemd after a configuration change
+- `systemctl restart rsyslog` – restarted the rsyslog service
+
+### Rsyslog Troubleshooting and Verification
+
+![Rsyslog Troubleshooting and Verification](06-rsyslog-restart-verification.png)
+
+This screenshot shows the rsyslog service after troubleshooting and restarting it to confirm that it was running properly.
+
+
