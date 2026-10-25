@@ -96,6 +96,44 @@ This screenshot shows failed authentication events involving `analyst1`. I used 
 
 I reviewed the `su` activity and found that `thelaw` switched to `analyst1`. The logs showed the session successfully opened at 21:11:08 and closed at 21:24:35. Since the activity matched the account switching I performed during the lab, I treated it as expected activity rather than a security incident.
 
+##SSH Installation and Remote Login Verification
+
+###Before Installation
+
+I checked the SSH service, package status, and listening TCP ports. The SSH service was not found, 'openssh-server' was not installed, and no TCP listener appeared on port 22.
+
+![Before SSH installation](14-before-ssh-installation.png)
+
+### Installation and Listening Ports
+
+I installed 'openssh-server' and checked listening ports again using 'sudo ss-ltnp'. Port 22 appeared on all IPv4 interfaces ('0.0.0.0:22') and all IPv6 interfaces ('[::}:22'). This confirmed a listening socket; remote access still depended on networking and firewall settings.
+
+![After SSH installation](15-after-ssh-installation.png)
+
+### SSH Socket Verification
+
+I verified that 'ssh.socket' was enabled and active (listening). The socket was managed by systemd and configured to trigger 'ssh.service'.
+
+![SSH socket verification](16-ssh-socket-verification.png)
+
+### Remote Login from Windows
+
+I connected from Windows PowerShell to the Ubuntu VM using:
+
+ssh-dee-law@192.168.211.132
+
+After password authentication, I reached the Ubuntu shell.
+
+![Successful SSH login](17-successful-ssh-login.png)
+
+### Authentication Log Verification
+
+I reviewed '/var/log/auth.log' and found an accepted password login for 'dee-law' from '192.168.211.136' at 23:24:04 on October 24, 2026 (UTC-05:00). A matching session-opening event confirmed that the SSH session started.
+
+The client used temporary source port 62931 while the server listened on port 22. I excluded log entries containing 'COMMAND=' to keep recorded search commands out of the results.
+
+![SSH authentication log](18-ssh-authentication-log.png)
+
 ## What I Learned
 
 This project helped me become more comfortable working in Linux from the command line instead of only learning the commands individually. I practiced managing users and groups, setting file permissions, working with system services, and troubleshooting when something did not work as expected.
