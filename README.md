@@ -96,9 +96,9 @@ This screenshot shows failed authentication events involving `analyst1`. I used 
 
 I reviewed the `su` activity and found that `thelaw` switched to `analyst1`. The logs showed the session successfully opened at 21:11:08 and closed at 21:24:35. Since the activity matched the account switching I performed during the lab, I treated it as expected activity rather than a security incident.
 
-##SSH Installation and Remote Login Verification
+## SSH Installation and Remote Login Verification
 
-###Before Installation
+### Before Installation
 
 I checked the SSH service, package status, and listening TCP ports. The SSH service was not found, 'openssh-server' was not installed, and no TCP listener appeared on port 22.
 
@@ -120,7 +120,7 @@ I verified that 'ssh.socket' was enabled and active (listening). The socket was 
 
 I connected from Windows PowerShell to the Ubuntu VM using:
 
-ssh-dee-law@192.168.211.132
+ssh dee-law@192.168.211.132
 
 After password authentication, I reached the Ubuntu shell.
 
