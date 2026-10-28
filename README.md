@@ -20,7 +20,7 @@ I created a separate user account named `analyst1` to practice managing users in
 
 Some of the commands I worked with included:
 
-- `useradd` – created a new user account
+- `adduser` – created a new user account
 - `groupadd` – created the security group
 - `usermod -aG` – added users to the security group
 - `id` – checked user and group membership
@@ -48,7 +48,7 @@ Some of the commands I worked with included:
 
 ![Security Group Permission Test](07-security-group-write-test.png)
 
-This screenshot shows testing file access and group permissions to confirm that members of the `security` group had the expected access.
+I switched to analyst1, accessed the SecurityReports directory, and ran touch incident-report.txt without a permission error to test directory access and file creation.
 
 ## System Services & Troubleshooting
 
